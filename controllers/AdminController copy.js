@@ -8,8 +8,16 @@ const { } = require('../validator/AdminSchema');
 // const zarinpal = ZarinpalCheckout.create('00000000-0000-0000-0000-000000000000', true);
 
 function AdminController() {
+  // await courseSchema.validate(req.body, { abortEarly: false })
+  // const image = req.files ? req.files.videoUrl : {};
   // const fileName = `${shortId.generate()}_${image.name}`;
+  // fs.writeFileSync(`${appRoot}/public/upload/image/${fileName2}`, image.data);
   // await sharp(image.data).toFile(`${appRoot}/public/upload/food/${fileName}`)
+  // .jpeg({ quality: 80 })
+      // .resize({width: 150,height: 150})
+      // .extract({ width: 500, height: 330, left: 120, top: 70  })
+      // .extract({ width: 500, height: 330, left: 120, top: 70  })
+      // .toFormat("jpeg", { mozjpeg: true })
   // if (fs.existsSync(`${appRoot}/public/upload/food/${food.imageUrl}`))
   // fs.unlinkSync(`${appRoot}/public/upload/food/${food.imageUrl}`)
   // await FoodModel.findByIdAndRemove(req.params.id)
