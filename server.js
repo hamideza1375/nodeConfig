@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const winston = require('winston');
 const dotEnv = require("dotenv"); dotEnv.config({ path: "./.env" }); // process.env.SECRET
 const { setHeaders } = require("./middleware/headers");
-const Food = require("./router/FoodRouter");
+const Mobile = require("./router/MobileRouter");
 const User = require("./router/UserRouter");
 const Admin = require("./router/AdminRouter");
 const ErrorMiddleware = require('./middleware/Error');
@@ -34,7 +34,7 @@ app.set('views', './views');
 // app.use(fileUpload());
 app.use(ErrorMiddleware);
 
-app.use(Food)
+app.use(Mobile)
 app.use(User)
 app.use(Admin)
 
@@ -43,12 +43,12 @@ app.use((req, res) => res.send("<h1 style='text-align:center;color:red; font-siz
 const port = 4000
 app.listen(port, (err) => { console.log(`App Listen to port ${port}`) })
 
+mongoose.set('strictQuery', false);
 mongoose.connect(
-  "mongodb://localhost:27017/******",
+  "mongodb://localhost:27017/mobile",
   {
-    useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false,
-    useCreateIndex: true 
+    useNewUrlParser: true, useUnifiedTopology: true
+   
 
   })  .then(() => console.log('db connected'))
   .catch((err) => console.error('db not connected', err));
-

@@ -1,36 +1,33 @@
-const Yup = require("yup");
+const Joi = require("joi");
 
 
+exports.SendPhoneSchema = Joi.object().keys({
+    phone: Joi.string().min(11).max(11).required(),
+  });
 
-exports.SendPhoneSchema = Yup.object().shape({
-    phone: Yup.string().min(11).max(11).required(),
-});
 
-exports.RegisterVerifyCodeSchema = Yup.object().shape({
-    phone: Yup.string().min(11).max(11).required(),
+exports.RegisterVerifyCodeSchema =  Joi.object().keys({
+    phone: Joi.string().min(11).max(11).required(),
 
-    fullname: Yup.string().required().min(3).max(50),
+    fullname: Joi.string().required().min(3).max(50),
  
-    password: Yup.string().min(4).max(12).required(),
+    password: Joi.string().min(4).max(12).required(),
 
-    code: Yup.string().required(),
+    code: Joi.string().required(),
 });
 
 
-exports.LoginSchama = Yup.object().shape({
-    phone: Yup.string().min(11).max(11).required(),
- 
-    password: Yup.string().min(4).max(12).required(),
+exports.LoginSchama = Joi.object().keys({
+    phone: Joi.string().min(11).max(11).required(),
+    password: Joi.string().min(4).max(12).required(),
 });
 
 
-exports.ResetPasswordSchama = Yup.object().shape({
-    password: Yup.string().min(4).max(12).required(),
-
-    repeatPassword: Yup.string().required().oneOf([Yup.ref("password"), null]),
+exports.ResetPasswordSchama = Joi.object().keys({
+    password: Joi.string().min(4).max(12).required()
 });
 
 
-exports.SendCodeSchema = Yup.object().shape({
-    code: Yup.string().min(11).max(11).required(),
+exports.SendCodeSchema = Joi.object().keys({
+    code: Joi.string().min(11).max(11).required(),
 });

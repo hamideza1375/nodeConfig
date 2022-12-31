@@ -5,7 +5,7 @@ const AuthAdmin = require('../middleware/AuthAdmin');
 
 
 // User
-router.post("/useradmin", AuthAdmin, Admin.setUserAdmin);
+// router.post("/useradmin", AuthAdmin, Admin.setUserAdmin);
 
 module.exports = router
 

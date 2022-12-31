@@ -1,7 +1,7 @@
 const {RegisterLogin} = require('../model/UserModel');
+const { } = require('../validator/UserSchema');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { } = require('../validator/UserSchema');
 const captchapng = require("captchapng");
 var CAPTCHA_NUM = null;
 const nodeCache = require("node-cache");

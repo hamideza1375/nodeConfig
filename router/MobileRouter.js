@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const {FoodController: Food} = require('../controllers/FoodController');
+const {MobileController: mobile} = require('../controllers/MobileController');
 const user = require('../middleware/user');
 const Auth = require('../middleware/Auth');
 
 
 
-router.put('/editcomment/:id',Auth, Food.editcomment);
+router.post('/mobile', mobile.mobile);
 
 module.exports = router
